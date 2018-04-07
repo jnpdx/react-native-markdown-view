@@ -80,12 +80,13 @@ function paragraphRenderer() {
   var renderText = textContentRenderer('paragraph')
 
   return (node: InlineContentNode, output: OutputFunction, state: RenderState, styles: RenderStyles) => {
-    if (node.content instanceof Array && node.content.length === 1 && node.content[0].type === 'image') {
-      const imageNode : ImageNode = node.content[0]
-      return renderImage(imageNode, output, state, styles)
-    } else {
-      return renderText(node, output, state, styles)
-    }
+    return renderText(node, output, state, styles)
+//     if (node.content instanceof Array && node.content.length === 1 && node.content[0].type === 'image') {
+//       const imageNode : ImageNode = node.content[0]
+//       return renderImage(imageNode, output, state, styles)
+//     } else {
+//       return renderText(node, output, state, styles)
+//     }
   }
 }
 
